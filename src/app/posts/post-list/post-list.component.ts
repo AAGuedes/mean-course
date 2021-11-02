@@ -12,6 +12,7 @@ import { PostsService } from "../posts.service";
 
 export class PostListComponent implements OnInit, OnDestroy {
 
+  posts: Post[] = [];
   private postsSub: Subscription = new Subscription;
 
   constructor(public postsService: PostsService) { }
@@ -27,6 +28,4 @@ export class PostListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
-
-  posts: Post[] = [];
 }
